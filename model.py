@@ -1,0 +1,3 @@
+msg = "Water"
+
+print(msg)
