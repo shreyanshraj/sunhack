@@ -16,13 +16,13 @@
 <body>
     <section class="navbar">
         <div id="row">
-            <div class="col-4">
+            <div class="col-2">
                 <div class="logo_grid">
                     <img src="images/navajo_logo.png" id="nav_logo" srcset="">
                     <img src="images/water.png" id="water" alt="">
                 </div>
             </div>
-            <div class="col-8" id="title">
+            <div class="col-10" id="title">
                 <div id=" title">DesertFlow <br>Predictive Water Models for Navajo Nation</div>
             </div>
         </div>
@@ -45,54 +45,82 @@
 
     <section id="about">
         <p class="heading">About the Project</p>
-        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fu</p>
+        <p class="text">Our project leverages open-source datasets from 1962 to 2022 to analyze annual water levels in
+            the Navajo Nation. This
+            historical analysis is crucial for training our machine learning model, which uses key features like water
+            influx and
+            release. After training, the model predicts water levels for the next five years, factoring in current water
+            consumption
+            rates. We visualize these predictions using the Pandas library for clear, data-driven insights. Our model
+            assumes that
+            water release directly correlates with consumption, providing a basis for understanding future water
+            availability trends
+            in the region.
+        </p>
     </section>
 
     <section id="d_pline">
         <p class="heading">Data Pipeline</p>
         <p class="text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fu</p>
+            We are utilizing a dataset from the Navajo Reservoir Government website, which contains essential features
+            for our
+            project.
+            Dataset can be found at the link: @link
+            The first step in our data pipeline involves cleaning the dataset by removing duplicates, handling missing
+            values, and
+            ensuring data consistency. Once the dataset is refined, we apply supervised learning techniques to train our
+            model.
+            Specifically, we experiment with three models each for accuracy:</p>
+        <p class="text">
+        <ul class="text">
+            <li>Linear Regression</li>
+            <li>Naive Bayes</li>
+            <li>K-Nearest Neighbors(KNN)</li>
+        </ul>
+        </p>
+
+        <p class="text">After identifying the most accurate model, we visualize the predictions by plotting a graph
+            between water
+            levels and
+            years using the Pandas library. These predictions are based on current water inflow and consumption trends,
+            providing
+            insight into future water availability.
+        </p>
     </section>
 
     <section id="data_vis">
-        <p class="heading">Visualising water</p>
+        <p class="heading">Visualising Data</p>
         <p class="text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fu
+            We are using the Pandas library to plot water levels against the year on the x-axis.
         </p>
+        <img src="images/test_graph.png" class="graph_vis">
 
     </section>
 
     <section id="future_act">
-        <p class="heading">future actions??</p>
+        <p class="heading">Sustainability Practises</p>
         <p class="text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fu
+            To ensure sustainable water resources for future generations in the Navajo region, several water-saving
+            practices can be
+            adopted. These include implementing efficient irrigation systems for agriculture, using drip irrigation to
+            minimize
+            water waste, and encouraging rainwater harvesting for local use. Upgrading infrastructure to reduce water
+            leakage and
+            improving water storage capabilities are also essential. Public education on water conservation, along with
+            community-led initiatives, can further enhance water-saving efforts. By combining modern technology with
+            traditional
+            knowledge, the Navajo Nation can build a more resilient and sustainable water future.
         </p>
     </section>
 
     <section id="team">
-        <p class="heading">Meet the team</p>
+        <p class="heading_team">Meet the team</p>
         <div class="row">
             <div class="name-col-lay">
-                <p>Archie</p>
-                <p>Joseph</p>
-                <p>Kowan</p>
-                <p>Raj</p>
+                <p class="team_text">Archie</p>
+                <p class="team_text">Joseph</p>
+                <p class="team_text">Kowan</p>
+                <p class="team_text">Raj</p>
 
             </div>
         </div>
