@@ -1,0 +1,47 @@
+
+
+#title{
+    text-align: center;
+    font-size: 2.2em;
+    align-self: center;
+}
+.navbar{
+    width: 100%;
+}
+
+#nav_logo{
+    height: 5em;
+    width: 8em;
+    float: left;
+}
+
+#water{
+    height: 5em;
+    width: 3em;
+}
+.logo_grid{
+    display: grid;
+    grid-template-columns: auto auto;
+    float: left;
+    column-gap: 0em;
+}
+
+.heading{
+    font-size: 1.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+    font-weight: 600;
+    margin-bottom: 0.2em;
+}
+
+.text{
+    margin-left: 1.5em;
+    margin-right: 1em;
+    font-size: 1em;
+}
+
+.name-col-lay{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin-left: 1.5em;
+}
