@@ -204,3 +204,10 @@ svg{
     text-decoration: underline;
     font-size: 1.2em;
 }
+
+#heading_text{
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 500;
+    text-decoration: underline;
+}
