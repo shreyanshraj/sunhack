@@ -43,8 +43,8 @@ document.addEventListener("DOMContentLoaded", function(){
             d['result'] = +d['result']
         })
 
-        console.log(wells_data); 
-        console.log(navajo_region);
+        // console.log(wells_data); 
+        // console.log(navajo_region);
         
 
         mapPlot()
@@ -68,75 +68,75 @@ function mapPlot(){
                         .center([-470,35])
                         .translate([width / 2+50, height / 2]);
 
-// Create SVG element
-const svg = d3.select("svg")
-let topo = navajo_state
+    // Create SVG element
+    const svg = d3.select("svg")
+    let topo = navajo_state
 
-svg.append("g")
-        .selectAll("path")
-        .data(topo.features)
+    svg.append("g")
+            .selectAll("path")
+            .data(topo.features)
+            .enter()
+            .append("path")
+            .attr("d", d3.geoPath()
+                .projection(projection)
+            )
+            .attr("fill","#E2DDDD9F")
+            .style("stroke", "black")
+            .attr("class", function(d){ return "States" } )
+            .style("opacity", 1)
+
+    console.log(wells_data);
+
+
+    svg.selectAll("myCircles")
+        .data(wells_data)
         .enter()
-        .append("path")
-        .attr("d", d3.geoPath()
-            .projection(projection)
-        )
-        .attr("fill","#E2DDDD9F")
-        .style("stroke", "black")
-          .attr("class", function(d){ return "States" } )
-          .style("opacity", 1)
-
-console.log(wells_data);
-
-
-svg.selectAll("myCircles")
-    .data(wells_data)
-    .enter()
-    .append("circle")
-      .attr("cx", function(d){ return projection([d.long, d.lat])[0] })
-      .attr("cy", function(d){ return projection([d.long, d.lat])[1] })
-      .attr("r", d=> size(d.result))
-      .style("fill","#39CFEDFF")
-      .attr("stroke", '#000000FF')
-      .attr("stroke-width", .2)
-      .attr("fill-opacity", .5)
-      
+        .append("circle")
+        .attr("cx", function(d){ return projection([d.long, d.lat])[0] })
+        .attr("cy", function(d){ return projection([d.long, d.lat])[1] })
+        .attr("r", d=> size(d.result))
+        .style("fill","#39CFEDFF")
+        .attr("stroke", '#000000FF')
+        .attr("stroke-width", .2)
+        .attr("fill-opacity", .5)
+        
 
 
-svg.append('text')
-.attr('y',500)
-        .attr('class', 'svg_text')
-        .attr('x',width/2-200)
-        .style('text-anchor','middle')
-        .text('Water wells in Navajo region' )
- 
-// state names
-svg.append('text')
-.attr('y',345)
-        .attr('class', 'svg_map_text')
-        .attr('x',width/2)
-        .style('text-anchor','middle')
-        .text('Arizona' )
+    svg.append('text')
+    .attr('y',500)
+            .attr('class', 'svg_text')
+            .attr('x',width/2-200)
+            .style('text-anchor','middle')
+            .text('Water wells in Navajo region' )
+    
+    // state names
+    svg.append('text')
+    .attr('y',345)
+            .attr('class', 'svg_map_text')
+            .attr('x',width/2)
+            .style('text-anchor','middle')
+            .text('Arizona' )
 
-svg.append('text')
-.attr('y',145)
-        .attr('class', 'svg_map_text')
-        .attr('x',width/2)
-        .style('text-anchor','middle')
-        .text('Utah' )
+    svg.append('text')
+    .attr('y',145)
+            .attr('class', 'svg_map_text')
+            .attr('x',width/2)
+            .style('text-anchor','middle')
+            .text('Utah' )
 
-svg.append('text')
-.attr('y',145)
-        .attr('class', 'svg_map_text')
-        .attr('x',width/2+200)
-        .style('text-anchor','middle')
-        .text('Colarado' )
+    svg.append('text')
+    .attr('y',145)
+            .attr('class', 'svg_map_text')
+            .attr('x',width/2+200)
+            .style('text-anchor','middle')
+            .text('Colarado' )
 
-svg.append('text')
-.attr('y',345)
-        .attr('class', 'svg_map_text')
-        .attr('x',width/2+200)
-        .style('text-anchor','middle')
-        .text('New Mexico' )
+    svg.append('text')
+    .attr('y',345)
+            .attr('class', 'svg_map_text')
+            .attr('x',width/2+200)
+            .style('text-anchor','middle')
+            .text('New Mexico' )
 
 
     
