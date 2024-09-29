@@ -22,7 +22,7 @@ h1, p {
     margin-left: 15vw;
     margin-right: 20vw; /* Centered horizontally */
     padding: 0.5em 1em; /* Adds space around the text inside the box */
-    background-color: #C6AC8F; /* Background color for the title box */
+    background-color: #cfb99fc5; /* Background color for the title box */
     border-radius: 15px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -142,7 +142,8 @@ h1, p {
     width: 45%; /* Box width, adjust as needed */
     padding: 1.25em; /* Internal padding */
     margin: 1em 0; /* Space around each box */
-    max-height: 200px; /* Minimum height for each box */
+    min-height: 200px; /* Minimum height for each box */
+    max-height: 350px;
     box-sizing: border-box; /* Include padding in width and height */
 }
 .graph-box {
