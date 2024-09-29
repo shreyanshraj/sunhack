@@ -150,7 +150,7 @@ print(df_cleaned.dtypes)
 # Ensure 'datetime' column is in datetime format
 df_cleaned['datetime'] = pd.to_datetime(df_cleaned['datetime'], errors='coerce')
 is_datetime = pd.api.types.is_datetime64_any_dtype(df_cleaned['datetime'])
-print(f"Is 'datetime' column in datetime format? {is_datetime}")
+print(f"\nIs 'datetime' column in datetime format? {is_datetime}")
 
 cols = ['area', 'storage', 'delta storage', 'inflow', 'inflow volume', 'unregulated inflow', 'unregulated inflow volume', 'mod unregulated inflow', 'mod unregulated inflow volume', 'evaporation', 'release volume', 'total release']
 
