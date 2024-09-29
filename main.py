@@ -2,6 +2,8 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
+from sklearn.linear_model import LinearRegression
+from datetime import datetime, timedelta
 
 ### PART 1 : Dataset Overview ###
 
@@ -174,9 +176,6 @@ for column in cols:
     is_float_column = df_cleaned[column].apply(lambda x: isinstance(x, float))
     print(f"Are all values in '{column}' float? {is_float_column.all()}")
 
-#check for duplicate values in each column
-df_cleaned[df_cleaned[cols].duplicated()]
-
 ### PART 7 : Adding New Features ###
 
 # Create a new DataFrame to hold the new features
@@ -333,10 +332,78 @@ plt.tight_layout()
 plt.grid(True)
 plt.show()
 
-### PART 8 : Model Selection ###
+### PART 8 : Model Selection, Trainig, and Evaluation ###
 
-### PART 9 : Model Training ###
+### Linear Regression Model ###
 
-### PART 10 : Model Evaluation ###
+# Convert 'datetime' into numerical format
+df_new_feature['datetime_num'] = pd.to_datetime(df_new_feature['datetime']).map(datetime.toordinal)
 
-### PART 11 : Prediction ###
+# Define X (datetime as numerical) and Y (net storage volume)
+X = df_new_feature[['datetime_num']]
+Y = df_new_feature['net_storage_volume']
+
+# Create and train the linear regression model
+model_storage = LinearRegression()
+model_storage.fit(X, Y)
+
+# Predict when 'net storage volume' would hit 0
+# This is equivalent to solving for the 'datetime_num' where Y=0
+
+predicted_datetime_num = -model_storage.intercept_ / model_storage.coef_[0]
+
+# Convert predicted 'datetime_num' back to a readable date format
+predicted_date = datetime.fromordinal(int(predicted_datetime_num))
+
+# Print the predicted date
+print(f"The predicted date when net storage volume will hit 0 is: {predicted_date}")
+
+# Plot the linear regression fit and the prediction
+plt.figure(figsize=(10, 6))
+plt.scatter(df_new_feature['datetime'], df_new_feature['net_storage_volume'], color='green', label='Data')
+plt.plot(df_new_feature['datetime'], model_storage.predict(X), color='blue', label='Linear Fit')
+plt.axhline(0, color='red', linestyle='--', label='Net Storage = 0')
+plt.axvline(predicted_date, color='orange', linestyle='--', label=f'Prediction: {predicted_date.date()}')
+plt.title('Prediction of When Net Storage Volume Hits 0')
+plt.xlabel('Date')
+plt.ylabel('Net Storage Volume')
+plt.xticks(rotation=45)
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+# Define X (datetime as numerical), Y1 (net storage volume), and Y2 (net flow volume)
+X = df_new_feature[['datetime_num']]
+Y = df_new_feature['net_flow_volume']
+
+# Now, let's model the net flow volume based on datetime
+model_flow = LinearRegression()
+model_flow.fit(X, Y)
+
+# Predict the net flow volume at the time when net storage volume hits 0
+predicted_net_flow_at_zero_storage = model_flow.predict([[predicted_datetime_num]])
+
+# Print the results
+print(f"The predicted date when net storage volume will hit 0 is: {predicted_date}")
+print(f"The predicted net flow volume at this point is: {predicted_net_flow_at_zero_storage[0]}")
+
+# Plot the results for net flow volume
+plt.figure(figsize=(10, 6))
+
+# Plot the net flow volume behavior as net storage volume hits 0
+plt.scatter(df_new_feature['datetime'], df_new_feature['net_flow_volume'], color='blue', label='Net Flow Volume Data')
+plt.plot(df_new_feature['datetime'], model_flow.predict(X), color='green', label='Net Flow Volume Linear Fit')
+plt.axvline(predicted_date, color='orange', linestyle='--', label=f'Prediction: {predicted_date.date()}')
+plt.axhline(predicted_net_flow_at_zero_storage[0], color='red', linestyle='--', label=f'Net Flow at 0 Storage: {predicted_net_flow_at_zero_storage[0]:.2f}')
+plt.title('Behavior of Net Flow Volume as Net Storage Volume Hits 0')
+plt.xlabel('Date')
+plt.ylabel('Net Flow Volume')
+plt.xticks(rotation=45)
+plt.legend()
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()
+
+### PART 9 : Final Prediction ###
