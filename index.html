@@ -8,7 +8,7 @@
     <title>Navajo Nation Water Scarcity</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="hack.css"> 
+    <link rel="stylesheet" href="hack.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
     <script>
         // Function to check if an element is in the viewport
@@ -19,7 +19,7 @@
                 rect.bottom >= 0
             );
         }
-    
+
         // Function to add/remove the 'visible' class based on the element's visibility
         function handleScroll() {
             const element = document.querySelector('#future_act'); // Select the Sustainability section
@@ -29,7 +29,7 @@
                 element.classList.remove('visible'); // Remove visible class when out of view
             }
         }
-    
+
         // Run the handleScroll function on page load and whenever the user scrolls
         window.addEventListener('scroll', handleScroll);
         window.addEventListener('load', handleScroll); // Initial check on page load
@@ -55,9 +55,14 @@
     <section id="intro">
         <p class="heading">Introduction</p>
         <p class="text">Water scarcity is a significant issue in the Navajo Nation, a region spanning Arizona, Utah, and
-            New Mexico. Many Navajo residents lack access to clean, running water due to a combination of geographic isolation, underdeveloped
-            infrastructure, and historical neglect. More than 30% of the population lives without piped water, often relying on
-            water hauling from distant sources. Droughts, contamination from mining, and depletion of groundwater have worsened the problem. Efforts are being made to address these challenges through infrastructure development, federal funding, and tribal initiatives, but the issue remains critical for the health and well-being of the community.</p>
+            New Mexico. Many Navajo residents lack access to clean, running water due to a combination of geographic
+            isolation, underdeveloped
+            infrastructure, and historical neglect. More than 30% of the population lives without piped water, often
+            relying on
+            water hauling from distant sources. Droughts, contamination from mining, and depletion of groundwater have
+            worsened the problem. Efforts are being made to address these challenges through infrastructure development,
+            federal funding, and tribal initiatives, but the issue remains critical for the health and well-being of the
+            community.</p>
     </section>
 
 
@@ -77,40 +82,50 @@
         </p>
     </section>
 
-   
+
 
     <section id="content-sections">
         <div class="content-box">
             <p class="heading">Data Pipeline</p>
             <p class="text">
-                We are utilizing a dataset from the Navajo Reservoir Government website, which contains essential features for our project. Dataset can be found at the link: <a href="https://www.usbr.gov/uc/water/hydrodata/reservoir_data/920/dashboard.html">@link</a>
-                The first step in our data pipeline involves cleaning the dataset by removing duplicates, handling missing values, and ensuring data consistency. Once the dataset is refined, we apply supervised learning techniques to train our model. Specifically, we experiment with three models each for accuracy:
+                We are utilizing a dataset from the Navajo Reservoir Government website, which contains essential
+                features for our project. Dataset can be found at the link: <a
+                    href="https://www.usbr.gov/uc/water/hydrodata/reservoir_data/920/dashboard.html">Navajo Reservoir
+                    Website</a><br>
+                The first step in our data pipeline involves cleaning the dataset by removing duplicates, handling
+                missing values, and ensuring data consistency. Once the dataset is refined, we apply supervised learning
+                techniques to train our model. Specifically, we experiment with three models each for accuracy:
             </p>
             <ul class="text">
                 <li>Linear Regression</li>
                 <li>Naive Bayes</li>
                 <li>K-Nearest Neighbors (KNN)</li>
             </ul>
-            <p class="text">After identifying the most accurate model, 
-                we visualize the predictions by plotting a graph between water levels and years using the Pandas library. 
-                These predictions are based on current water inflow and consumption trends, providing insight into future water 
+            <p class="text">After identifying the most accurate model,
+                we visualize the predictions by plotting a graph between water levels and years using the Pandas
+                library.
+                These predictions are based on current water inflow and consumption trends, providing insight into
+                future water
                 availability.</p>
         </div>
-    
+
         <div class="content-box">
             <p class="heading">Visualizing Data</p>
             <p class="text">We are using the Pandas library to plot water levels against the year on the x-axis.</p>
             <img src="images/test_graph.png" class="graph_vis">
         </div>
-        </section>
-    
+    </section>
+
     <section id="future_act" class="fade-in"> <!-- Sustainability Practices Section -->
         <p class="heading">Sustainability Practices</p>
         <p class="text">
             To ensure sustainable water resources for future generations in the Navajo region, several water-saving
-            practices can be adopted. These include implementing efficient irrigation systems for agriculture, using drip irrigation to
-            minimize water waste, and encouraging rainwater harvesting for local use. Upgrading infrastructure to reduce water
-            leakage and improving water storage capabilities are also essential. Public education on water conservation, along with
+            practices can be adopted. These include implementing efficient irrigation systems for agriculture, using
+            drip irrigation to
+            minimize water waste, and encouraging rainwater harvesting for local use. Upgrading infrastructure to reduce
+            water
+            leakage and improving water storage capabilities are also essential. Public education on water conservation,
+            along with
             community-led initiatives, can further enhance water-saving efforts. By combining modern technology with
             traditional knowledge, the Navajo Nation can build a more resilient and sustainable water future.
         </p>
