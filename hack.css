@@ -31,9 +31,10 @@ h1, p {
 } */
 
 #nav_logo{
-    height: 7em;
-    width: 10em;
+    height: 8em;
+    width: 15em;
     float: left;
+    padding-top: .5em;
 }
 .navbar-nav {
     list-style-type: none;
@@ -220,4 +221,27 @@ svg{
     font-size: 1.5em;
     font-weight: 500;
     text-decoration: underline;
+}
+
+
+.linkedin_logo{
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.github_icon{
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.things {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin-left: 2em;
+    
+}
+
+.things_text{
+    font-size: 1.2em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
