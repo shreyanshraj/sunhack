@@ -7,7 +7,7 @@ body {
 }
 
 h1, p {
-    padding: 1em;
+    /* padding: 1em; */
 }
 
 *{
@@ -105,7 +105,7 @@ h1, p {
 }
 
 .content-box {
-    background-color: #C6AC8F; /* White background for the box */
+    background-color: #d0cac38f; /* White background for the box */
     border-radius: 15px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for 3D effect */
     width: 45%; /* Box width, adjust as needed */
