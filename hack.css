@@ -252,6 +252,14 @@ svg{
     text-align: center;
 }
 
+.text_p{
+    margin-left: 5em;
+    font-size: .8em;
+    text-align: center;
+    padding-top: -.5em;
+}
+
+
 .things_text{
     font-size: 1.2em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
