@@ -17,10 +17,10 @@ h1, p {
     color:#305087;
     text-align: center;
     font-size: 2.2em;
-    font-weight: 800;
+    font-weight: 1000;
     /* margin-right: 25vw; */
-    margin-left: 15vw;
-    margin-right: 20vw; /* Centered horizontally */
+    margin-left: 23vw;
+    margin-right: 20vw; /* Center   ed horizontally */
     padding: 0.5em 1em; /* Adds space around the text inside the box */
     background-color: #C6AC8F; /* Background color for the title box */
     border-radius: 15px; /* Rounded corners */
@@ -31,8 +31,8 @@ h1, p {
 } */
 
 #nav_logo{
-    height: 7em;
-    width: 10em;
+    height: 11em;
+    width: 20em;
     float: left;
 }
 .navbar-nav {
@@ -118,7 +118,7 @@ h1, p {
     width: 45%; /* Box width, adjust as needed */
     padding: 1.25em; /* Internal padding */
     margin: 1em 0; /* Space around each box */
-    max-height: 200px; /* Minimum height for each box */
+    max-height: 300px; /* Minimum height for each box */
     box-sizing: border-box; /* Include padding in width and height */
 }
 
