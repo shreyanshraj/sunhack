@@ -174,6 +174,9 @@ for column in cols:
     is_float_column = df_cleaned[column].apply(lambda x: isinstance(x, float))
     print(f"Are all values in '{column}' float? {is_float_column.all()}")
 
+#check for duplicate values in each column
+df_cleaned[df_cleaned[cols].duplicated()]
+
 ### PART 7 : Adding New Features ###
 
 # Create a new DataFrame to hold the new features
