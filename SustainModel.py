@@ -413,3 +413,80 @@ plt.show()
 # Print the results
 print(f"The predicted date when net storage volume will hit 0 is: {predicted_date}")
 print(f"The predicted net flow volume at this point is: {predicted_net_flow_at_zero_storage[0]}")
+
+### PART 10 : Solution Model ###
+
+# Constants
+TARGET_STORAGE = 1400000  # Target net storage volume (in whatever unit the dataset uses)
+CURRENT_STORAGE = df['net_storage_volume'].iloc[-1]  # The last known net storage volume
+YEARS_5 = 5
+YEARS_10 = 10
+
+# Define the timeframe for 5 and 10 years from the current date
+current_date = df['datetime'].max()
+# Convert current_date to a datetime object
+current_date = pd.to_datetime(current_date) 
+future_date_5_years = current_date + timedelta(days=YEARS_5 * 365)
+future_date_10_years = current_date + timedelta(days=YEARS_10 * 365)
+
+# Timeframe in days (to calculate required flow rate)
+days_5_years = (future_date_5_years - current_date).days
+days_10_years = (future_date_10_years - current_date).days
+
+# Calculate the required 'net flow volume' rate
+
+# Define the 'net flow volume' needed to reach target storage in 5 and 10 years
+required_flow_rate_5_years = (TARGET_STORAGE - CURRENT_STORAGE) / days_5_years
+required_flow_rate_10_years = (TARGET_STORAGE - CURRENT_STORAGE) / days_10_years
+
+# Create future dates for 5 and 10 years
+future_dates_5_years = pd.date_range(current_date, future_date_5_years - timedelta(days=1), freq='D')
+future_dates_10_years = pd.date_range(current_date, future_date_10_years, freq='D')
+
+# Predict future 'net storage volume' for 5 and 10 years
+
+# Predict 'net storage volume' based on required flow rate over time for both 5 and 10 years
+predicted_storage_5_years = [CURRENT_STORAGE + i * required_flow_rate_5_years for i in range(days_5_years)]
+predicted_storage_10_years = [CURRENT_STORAGE + i * required_flow_rate_10_years for i in range(days_10_years)]
+
+# Plot the future net flow volume and net storage volume for 5 years
+plt.figure(figsize=(12, 12))
+
+# Fetch the actual net flow volume and net storage volume from the dataset for plotting
+actual_net_flow_volume = df['net_flow_volume']
+actual_net_storage_volume = df['net_storage_volume']
+
+# Ensure that 'datetime' column is in proper format
+df['datetime'] = pd.to_datetime(df['datetime'])
+
+# Plot for required flow rate
+plt.subplot(3, 1, 1)
+plt.plot(future_dates_5_years, [required_flow_rate_5_years] * len(future_dates_5_years), label='Required Average Flow Rate (5 Years)', color='blue')
+plt.plot(future_dates_10_years, [required_flow_rate_10_years] * len(future_dates_10_years), label='Required Average Flow Rate (10 Years)', color='green')
+plt.plot(df['datetime'], actual_net_flow_volume, label='Actual Net Flow Volume', color='orange')
+plt.title('Net Flow Volume Rates')
+plt.xlabel('Date')
+plt.ylabel('Flow Volume Rate')
+plt.legend()
+plt.grid(True)
+
+# Plot for predicted storage volume
+plt.subplot(3, 1, 2)
+plt.plot(future_dates_5_years, predicted_storage_5_years, label='Predicted Storage Volume (5 Years)', color='orange')
+plt.plot(future_dates_10_years[:len(predicted_storage_10_years)], predicted_storage_10_years, label='Predicted Storage Volume (10 Years)', color='red')
+plt.plot(df['datetime'], actual_net_storage_volume, label='Actual Net Storage Volume', color='purple')
+plt.axhline(TARGET_STORAGE, color='purple', linestyle='--', label=f'Target Storage: {TARGET_STORAGE}')
+plt.title('Predicted and Actual Net Storage Volume Over Time')
+plt.xlabel('Date')
+plt.ylabel('Net Storage Volume')
+plt.legend()
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()
+
+### PART 11 : Final Solution ###
+
+# Print the results
+print(f"Required net flow volume rate to reach {TARGET_STORAGE} in 5 years: {required_flow_rate_5_years} per day")
+print(f"Required net flow volume rate to reach {TARGET_STORAGE} in 10 years: {required_flow_rate_10_years} per day")
