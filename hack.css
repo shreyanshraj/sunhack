@@ -147,6 +147,16 @@ h1, p {
     min-height: 300px; /* Minimum height for each box */
     box-sizing: border-box; /* Include padding in width and height */
 }
+.graph-box2 {
+    background-color: #d0cac38f; /* White background for the box */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for 3D effect */
+    width: 50%; /* Box width, adjust as needed */
+    padding: 1.25em; /* Internal padding */
+    margin: 0.5em 0 2em 0; /* Space around each box (adjust the margin as needed) */
+    min-height: 200px; /* Minimum height for each box */
+    box-sizing: border-box; /* Include padding in width and height */
+}
 
 
 /* Responsive design */
