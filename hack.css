@@ -183,3 +183,24 @@ h1, p {
     opacity: 1;
 }
 
+
+
+#vis_data{
+    margin-bottom: 1em;
+}
+
+svg{
+    width: 70%;
+    height: 600px;   
+    border: 1px solid black;
+    /* margin-left: 1em; */
+    margin-left: 15vw;
+    margin-right: 25%;
+    /* background-image: url('images/background_img.svg');
+    background-repeat: no-repeat; */
+}
+
+.svg_text{
+    text-decoration: underline;
+    font-size: 1.2em;
+}
