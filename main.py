@@ -140,3 +140,18 @@ df_cleaned.to_csv('cleaned_dataset_outliers_handled.csv', index=False)
 # Visualize the cleaned data after handling outliers
 sns.pairplot(df_cleaned)
 plt.show()
+
+# Part 6: Ensure Correct Data Types: Ensure columns have correct data types
+
+df_cleaned = pd.read_csv('cleaned_dataset_outliers_handled.csv')
+
+print(df_cleaned.dtypes)
+
+cols = ['area', 'storage', 'delta storage', 'inflow', 'inflow volume', 'unregulated inflow', 'unregulated inflow volume', 'mod unregulated inflow', 'mod unregulated inflow volume', 'evaporation', 'release volume', 'total release']
+
+for column in cols:
+    # Check if each value in the column is a float and print the result
+    is_float_column = df_cleaned[column].apply(lambda x: isinstance(x, float))
+    print(f"Are all values in '{column}' float? {is_float_column.all()}")
+
+
