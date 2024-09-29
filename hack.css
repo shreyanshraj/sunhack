@@ -239,11 +239,65 @@ svg{
     display: grid;
     grid-template-columns: auto auto auto auto;
     margin-left: 2em;
+    column-gap: 0em;
     
+}
+
+.heading_tech{
+    font-size: 1.5em;
+    /* margin-left: 1em; */
+    /* margin-right: 1em; */
+    font-weight: 600;
+    margin-bottom: 1em;
+    text-align: center;
 }
 
 .things_text{
     font-size: 1.2em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 600;
+}
+
+.tech_icons{
+    height: 2em;
+    width: 4.5em;
+}
+
+#icons_css{
+    height: 3em;
+    width: 5em;
+}
+
+#icons_html{
+    height: 3em;
+    width: 4em;
+}
+
+#tech_stack{
+    margin-left: 2.5em;
+    margin-bottom: 2em;
+}
+
+#sea_logo{
+    width: 6em;
+    height: 2em;
+}
+
+#mat_icon{
+    height: 4em;
+    width: 6em;
+}
+
+#d3_icon{
+    height: 3.5em;
+    width: 4em;
+}
+
+#num_icon{
+    height: 3em;
+    width: 6.5em;
+}
+
+#d3_row{
+    margin-right: -6em;
 }
