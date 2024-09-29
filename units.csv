@@ -1,0 +1,7 @@
+measurement, unit
+Elevation, Feet above sea level
+Change, Feet difference over previous measurement
+Content, Acre Feet
+Inflow, Average Cubic Feet / Second over entire 24 hour period
+Outflow, Average Cubic Feet / Second over entire 24 hour period
+Tems, Degrees Farhenheit
