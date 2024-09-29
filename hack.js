@@ -26,6 +26,11 @@ window.addEventListener('load', handleScroll); //
 
 document.addEventListener("DOMContentLoaded", function(){
     Promise.all([
+        d3.csv('/dataset/final_data_no_duplicates.csv')
+    ]).then(function(value){
+        wells_data = value
+
+        console.log(wells_data);
         
-    ])
+    })
 })
