@@ -130,3 +130,13 @@ numeric_cols = df_cleaned.select_dtypes(include=[np.number]).columns
 
 # Apply outlier handling to numeric columns of df_cleaned
 handle_outliers(numeric_cols)
+
+# Display the first few rows of the outlier-handled dataset
+print(df_cleaned.head())
+
+# Save the dataset with handled outliers to a new CSV file
+df_cleaned.to_csv('cleaned_dataset_outliers_handled.csv', index=False)
+
+# Visualize the cleaned data after handling outliers
+sns.pairplot(df_cleaned)
+plt.show()
