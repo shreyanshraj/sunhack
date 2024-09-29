@@ -15,7 +15,6 @@
             <div class="col-2">
                 <div class="logo_grid">
                     <img src="images/navajo_logo.png" id="nav_logo">
-                    <img src="images/water.png" id="water" alt="">
                 </div>
             </div>
             <div class="col-10" id="title">
@@ -28,15 +27,16 @@
         <p class="heading">Predictions from Our Model</p>
         <div class="content-box">
             <p class="text">Here, you can see the predictions made by our model:</p>
-            <img src="images/predicted_graph.png" class="graph_vis" alt="Predicted Graph">
-            <!-- Add more graphs as needed -->
+            <img src="images/linear_reg_prediction.png" class="graph_vis" alt="Prediction of When Net Storage Volume Hits 0">
         </div>
     </section>
-
+    
     <section id="model-explanation">
         <p class="heading">How the Model Works</p>
-        <p class="text">In this section, you can explain the methodology of your model...</p>
-        <!-- Add detailed explanation or diagrams as needed -->
+        <p class="text">The model leverages historical water data, including storage, inflow, and release volumes, to predict future trends. Through linear regression, the model forecasts when water storage levels may reach critically low points, if sustainability measures are not implemented. By analyzing patterns over the past 60 years, the predictions help guide future decisions regarding water management for the Navajo Nation.</p>
     </section>
-</body>
-</html>
+    
+    <!-- Back Button Section -->
+    <div class="text-center my-4">
+        <a href="index.html" class="btn btn-secondary">Back to Home</a>
+    </div>
