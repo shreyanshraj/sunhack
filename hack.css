@@ -1,5 +1,5 @@
 body {
-    background-color: #C6AC8F; /* Light brown/tan background */
+    background-color: #694a38; /* Light brown/tan background */
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -53,6 +53,9 @@ h1, p {
     margin-right: 1em;
     font-weight: 600;
     margin-bottom: 0.2em;
+}
+#sustainability-heading {
+    color: #4b543b; /* Change this color to whatever you want */
 }
 
 .heading_team{
