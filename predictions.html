@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Predictions - Navajo Nation Water Scarcity</title>
-    <link rel="stylesheet" href="hack.css">
+    <link rel="stylesheet" href="predictions.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <script src="hack.js" async defer></script>
 </head>
@@ -26,21 +26,30 @@
     </section>
 
     <section id="predictions">
-        <p class="heading">Predictions from Our Model</p>
-        <div class="content-box">
-            <p class="text">Here, you can see the predictions made by our model:</p>
-            <img src="images/linear_reg_prediction.png" class="graph_vis"
-                alt="Prediction of When Net Storage Volume Hits 0">
+        <p class="graph_heading">Predictions from Our Model</p>
+        <div id="content-sections"> <!-- Parent flex container -->
+            <div class="graph-box">
+                <p class="text">Here, you can see the predictions made by our model:</p>
+                <img src="images/prediction_nflow.png" class="graph_vis" alt="Prediction of When Net Storage Volume Hits 0">
+            </div>
+            <div class="content-box">
+                <p class="heading">Data Pipeline</p>
+                <p class="text">
+                    We are utilizing a dataset from the Navajo Reservoir Government website, which contains essential
+                    features for our project. Dataset can be found                </p>
+            </div>
         </div>
     </section>
 
     <section id="model-explanation">
         <p class="heading">How the Model Works</p>
-        <p class="text">The model leverages historical water data, including storage, inflow, and release volumes, to
-            predict future trends. Through linear regression, the model forecasts when water storage levels may reach
-            critically low points, if sustainability measures are not implemented. By analyzing patterns over the past
-            60 years, the predictions help guide future decisions regarding water management for the Navajo Nation.</p>
+        <p class="text">The model leverages historical water data, including storage, inflow, and release volumes, to predict future trends. Through linear regression, the model forecasts when water storage levels may reach critically low points, if sustainability measures are not implemented. By analyzing patterns over the past 60 years, the predictions help guide future decisions regarding water management for the Navajo Nation.</p>
     </section>
+    
+    <!-- Back Button Section -->
+    <div class="text-center my-4">
+        <a href="index.html" class="btn btn-secondary">Back to Home</a>
+    </div>
 </body>
 
 </html>
