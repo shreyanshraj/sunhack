@@ -103,12 +103,41 @@ svg.selectAll("myCircles")
 
 
 svg.append('text')
-.attr('y',545)
+.attr('y',500)
         .attr('class', 'svg_text')
         .attr('x',width/2-200)
         .style('text-anchor','middle')
         .text('Water wells in Navajo region' )
  
+// state names
+svg.append('text')
+.attr('y',345)
+        .attr('class', 'svg_map_text')
+        .attr('x',width/2)
+        .style('text-anchor','middle')
+        .text('Arizona' )
+
+svg.append('text')
+.attr('y',145)
+        .attr('class', 'svg_map_text')
+        .attr('x',width/2)
+        .style('text-anchor','middle')
+        .text('Utah' )
+
+svg.append('text')
+.attr('y',145)
+        .attr('class', 'svg_map_text')
+        .attr('x',width/2+200)
+        .style('text-anchor','middle')
+        .text('Colarado' )
+
+svg.append('text')
+.attr('y',345)
+        .attr('class', 'svg_map_text')
+        .attr('x',width/2+200)
+        .style('text-anchor','middle')
+        .text('New Mexico' )
+
 
     
 }
