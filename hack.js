@@ -21,3 +21,11 @@ function handleScroll() {
 // Run the handleScroll function on page load and whenever the user scrolls
 window.addEventListener('scroll', handleScroll);
 window.addEventListener('load', handleScroll); // 
+
+
+
+document.addEventListener("DOMContentLoaded", function(){
+    Promise.all([
+        
+    ])
+})
