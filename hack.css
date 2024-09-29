@@ -93,6 +93,7 @@ h1, p {
 .team_text{
     font-weight: 600;
     font-size: 1.2em;
+    margin-left: 4em;
 }
 
 .text_g{
@@ -244,4 +245,5 @@ svg{
 .things_text{
     font-size: 1.2em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
 }
