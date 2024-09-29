@@ -121,6 +121,7 @@ h1, p {
     max-height: 200px; /* Minimum height for each box */
     box-sizing: border-box; /* Include padding in width and height */
 }
+
 .graph-box {
     background-color: #d0cac38f; /* White background for the box */
     border-radius: 15px; /* Rounded corners */

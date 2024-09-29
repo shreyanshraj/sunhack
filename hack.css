@@ -67,6 +67,13 @@ h1, p {
     font-weight: 800;
     margin-bottom: 0.2em;
 }
+.heading2{
+    font-size: 1.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+    font-weight: 800;
+    margin-bottom: 0em;
+}
 #sustainability-heading {
     color: #4b543b; /* Change this color to whatever you want */
 }
@@ -88,7 +95,13 @@ h1, p {
 .text{
     margin-left: 1.5em;
     margin-right: 1em;
-    font-size: 1em;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.text2{
+    margin-left: 1.5em;
+    margin-right: 1em;
+    font-size: 1.2em;
     font-weight: 700;
 }
 
@@ -111,6 +124,26 @@ h1, p {
     width: 45%; /* Box width, adjust as needed */
     padding: 1.25em; /* Internal padding */
     margin: 1em 0; /* Space around each box */
+    max-height: 300px; /* Minimum height for each box */
+    box-sizing: border-box; /* Include padding in width and height */
+}
+.content-box2 {
+    background-color: #d0cac38f; /* White background for the box */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for 3D effect */
+    width: 45%; /* Box width, adjust as needed */
+    padding: 1.25em; /* Internal padding */
+    margin: 1em 0; /* Space around each box */
+    max-height: 200px; /* Minimum height for each box */
+    box-sizing: border-box; /* Include padding in width and height */
+}
+.graph-box {
+    background-color: #d0cac38f; /* White background for the box */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for 3D effect */
+    width: 50%; /* Box width, adjust as needed */
+    padding: 1.25em; /* Internal padding */
+    margin: 1em 0; /* Space around each box */
     min-height: 300px; /* Minimum height for each box */
     box-sizing: border-box; /* Include padding in width and height */
 }
@@ -127,7 +160,7 @@ h1, p {
    margin-right: 25vw;
    margin-top: 1em; */
    margin: 0em 0vw 10m;
-   width: 42em;
+   width: 45em;
    height: 30em;
 }
 .fade-in {
